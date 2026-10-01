@@ -11,20 +11,22 @@ object M3uParser {
      * Tối ưu tốc độ phân tích và tránh 100% lỗi escaping dấu ngoặc kép
      */
     private fun extractAttribute(line: String, key: String): String? {
-        val quotes = arrayOf('"', ''')
-        for (q in quotes) {
-            val prefix = "$key=$q"
-            val startIndex = line.indexOf(prefix, ignoreCase = true)
-            if (startIndex != -1) {
-                val valueStart = startIndex + prefix.length
-                val endIndex = line.indexOf(q, valueStart)
-                if (endIndex != -1) {
-                    return line.substring(valueStart, endIndex).trim()
-                }
+    val singleQuote = 39.toChar() // ASCII 39: Dấu nháy đơn '
+    val doubleQuote = 34.toChar() // ASCII 34: Dấu nháy kép "
+    val quotes = charArrayOf(doubleQuote, singleQuote)
+    for (q in quotes) {
+        val prefix = "$key=$q"
+        val startIndex = line.indexOf(prefix, ignoreCase = true)
+        if (startIndex != -1) {
+            val valueStart = startIndex + prefix.length
+            val endIndex = line.indexOf(q, valueStart)
+            if (endIndex != -1) {
+                return line.substring(valueStart, endIndex).trim()
             }
         }
-        return null
     }
+    return null
+}
 
     /**
      * Phân tích nội dung M3U/M3U8 thành danh sách Channel
