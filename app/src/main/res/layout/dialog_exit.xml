@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="480dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog"
+    android:padding="32dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bạn muốn thoát không?"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Nút Có thoát (Focus mặc định) -->
+        <Button
+            android:id="@+id/btnExitYes"
+            android:layout_width="140dp"
+            android:layout_height="52dp"
+            android:text="CÓ"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/btn_primary_selector"
+            android:layout_marginEnd="16dp"
+            android:focusable="true" />
+
+        <!-- Nút Không bên cạnh -->
+        <Button
+            android:id="@+id/btnExitNo"
+            android:layout_width="140dp"
+            android:layout_height="52dp"
+            android:text="KHÔNG"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#E2E8F0"
+            android:background="@drawable/btn_secondary_selector"
+            android:focusable="true" />
+    </LinearLayout>
+
+</LinearLayout>

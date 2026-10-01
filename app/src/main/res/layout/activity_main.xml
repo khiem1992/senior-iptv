@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 1. Media3 ExoPlayer Fullscreen -->
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:use_controller="false"
+        app:surface_type="surface_view"
+        app:resize_mode="fit" />
+
+    <!-- 2. Loading Buffering Indicator -->
+    <ProgressBar
+        android:id="@+id/pbBuffering"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="#38BDF8"
+        android:visibility="gone" />
+
+    <!-- 3. Thông báo Auto-Retry: "Đang kết nối lại..." -->
+    <LinearLayout
+        android:id="@+id/tvReconnecting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_reconnecting"
+        android:paddingStart="24dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="14dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:indeterminateTint="#F59E0B"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/tvReconnectingMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đang tải..."
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 4. OSD Hiển thị Số kênh + Tên kênh (Thu nhỏ 1/3, góc trên bên phải, nền trong suốt) -->
+    <LinearLayout
+        android:id="@+id/osdLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_osd"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone">
+
+        <!-- Số kênh nhỏ gọn (khoảng 1/3 trước) -->
+        <TextView
+            android:id="@+id/tvOsdNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01"
+            android:textColor="#38BDF8"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:background="#33FFFFFF"
+            android:layout_marginEnd="10dp" />
+
+        <!-- Tên kênh tinh tế -->
+        <TextView
+            android:id="@+id/tvOsdName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VTV1 HD"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <!-- 5. Channel Drawer danh sách kênh trượt từ bên trái -->
+    <LinearLayout
+        android:id="@+id/channelDrawer"
+        android:layout_width="380dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/bg_drawer"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="false"
+        android:elevation="16dp">
+
+        <!-- Tiêu đề Drawer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:paddingTop="28dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DANH SÁCH KÊNH"
+                android:textColor="#E2E8F0"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#334155" />
+
+        <!-- Danh sách kênh dạng RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChannels"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:clipToPadding="false"
+            android:focusable="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#334155" />
+
+        <!-- Nút Cài Đặt ở đáy danh sách kênh -->
+        <LinearLayout
+            android:id="@+id/btnSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_channel_normal"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
+            android:focusable="true"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_settings"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cài đặt &amp; Cập nhật Playlist"
+                android:textColor="#CBD5E1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

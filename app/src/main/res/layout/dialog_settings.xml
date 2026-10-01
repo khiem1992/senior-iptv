@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="600dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cài đặt Danh sách Kênh"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đường dẫn file danh sách phát (.m3u):"
+        android:textColor="#94A3B8"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/edtM3uUrl"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_edittext"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:inputType="textUri"
+        android:singleLine="true"
+        android:layout_marginBottom="16dp"
+        android:focusable="true" />
+
+    <ProgressBar
+        android:id="@+id/pbUpdating"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="#38BDF8"
+        android:visibility="gone"
+        android:layout_marginBottom="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btnCancelSettings"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:text="Đóng"
+            android:textSize="16sp"
+            android:textColor="#CBD5E1"
+            android:background="@drawable/btn_secondary_selector"
+            android:layout_marginEnd="12dp"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/btnUpdatePlaylist"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:text="Cập nhật kênh"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/btn_primary_selector"
+            android:focusable="true" />
+    </LinearLayout>
+
+</LinearLayout>

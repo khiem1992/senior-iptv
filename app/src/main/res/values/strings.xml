@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Truyền Hình TV</string>
+    <string name="reconnecting">Đang kết nối lại...</string>
+    <string name="exit_confirm_title">Thoát ứng dụng?</string>
+    <string name="exit_confirm_desc">Bác có muốn tắt ứng dụng truyền hình không?</string>
+    <string name="btn_exit_yes">CÓ (THOÁT)</string>
+    <string name="btn_exit_no">KHÔNG</string>
+    <string name="btn_update">Cập nhật kênh</string>
+</resources>

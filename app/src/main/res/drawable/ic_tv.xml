@@ -1,0 +1,71 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Nền đen bo tròn hiện đại -->
+    <path
+        android:fillColor="#0A0A0F"
+        android:pathData="M14,0h80c7.73,0 14,6.27 14,14v80c0,7.73 -6.27,14 -14,14H14C6.27,108 0,101.73 0,94V14C0,6.27 6.27,0 14,0z"/>
+
+    <!-- Viền tinh tế -->
+    <path
+        android:strokeColor="#22FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M14,1h80c7.18,0 13,5.82 13,13v80c0,7.18 -5.82,13 -13,13H14C6.82,107 1,101.18 1,94V14C1,6.82 6.82,1 14,1z"/>
+
+    <!-- Dải 7 sắc cầu vồng (Đỏ, Cam, Vàng, Lục, Lam, Chàm, Tím) -->
+    <!-- 1. Đỏ -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M24,42 C24,28 35,18 54,18 C73,18 84,28 84,42 L80,42 C80,30 71,22 54,22 C37,22 28,30 28,42 Z"/>
+    <!-- 2. Cam -->
+    <path
+        android:fillColor="#F97316"
+        android:pathData="M27,43 C27,31 37,22 54,22 C71,22 81,31 81,43 L77,43 C77,33 69,26 54,26 C39,26 31,33 31,43 Z"/>
+    <!-- 3. Vàng -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M30,44 C30,34 39,26 54,26 C69,26 78,34 78,44 L74,44 C74,36 67,30 54,30 C41,30 34,36 34,44 Z"/>
+    <!-- 4. Lục -->
+    <path
+        android:fillColor="#22C55E"
+        android:pathData="M33,45 C33,37 41,30 54,30 C67,30 75,37 75,45 L71,45 C71,39 65,34 54,34 C43,34 37,39 37,45 Z"/>
+    <!-- 5. Lam -->
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M36,46 C36,40 43,34 54,34 C65,34 72,40 72,46 L68,46 C68,42 63,38 54,38 C45,38 40,42 40,46 Z"/>
+    <!-- 6. Chàm -->
+    <path
+        android:fillColor="#3B82F6"
+        android:pathData="M39,47 C39,43 45,38 54,38 C63,38 69,43 69,47 L65,47 C65,45 61,42 54,42 C47,42 43,45 43,47 Z"/>
+    <!-- 7. Tím -->
+    <path
+        android:fillColor="#A855F7"
+        android:pathData="M42,48 C42,46 47,42 54,42 C61,42 66,46 66,48 L63,48 C63,47 59,45 54,45 C49,45 45,47 45,48 Z"/>
+
+    <!-- Khung TV hiện đại -->
+    <path
+        android:fillColor="#151722"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2.5"
+        android:pathData="M28,48h52c3.31,0 6,2.69 6,6v26c0,3.31 -2.69,6 -6,6H28c-3.31,0 -6,-2.69 -6,-6V54C22,50.69 24.69,48 28,48z"/>
+
+    <!-- Chữ i (Đầu chấm đỏ/cam, thân trắng) -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M38,57m-2.5,0a2.5,2.5 0 1,0 5,0a2.5,2.5 0 1,0 -5,0"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,62h4v16h-4z"/>
+
+    <!-- Chữ T trắng đậm -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M44,62h12v3.5h-4.2v12.5h-3.6v-12.5h-4.2z"/>
+
+    <!-- Chữ V trắng đậm -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M58,62h3.8l3.6,11.5l3.6,-11.5h3.8l-5.6,16h-3.6z"/>
+</vector>
