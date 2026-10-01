@@ -126,15 +126,16 @@ class PlayerManager(private val context: Context) {
         val mediaSourceFactory = DefaultMediaSourceFactory(dataSourceFactory)
 
         // 4. LoadControl tối ưu khởi động nhanh, mở kênh xem ngay lập tức
-        val loadControl = DefaultLoadControl.Builder()
-            .setBufferDurationsMs(
-                /* minBufferMs = */ 2000,
-                /* maxBufferMs = */ 10000,
-                /* bufferForPlaybackMs = */ 1000,
-                /* bufferForPlaybackAfterRebufferMs = */ 1500
-            )
-            .setPrioritizeTimeOverSizeThresholds(true)
-            .build()
+        // LoadControl tối ưu điểm vàng cho cả 720p và 1080p:
+val loadControl = DefaultLoadControl.Builder()
+    .setBufferDurationsMs(
+        /* minBufferMs = */ 3000,    // Luôn giữ tối thiểu 3 giây dữ liệu trong RAM
+        /* maxBufferMs = */ 15000,   // Tối đa 15 giây
+        /* bufferForPlaybackMs = */ 1800, // 1.8 giây là "ĐIỂM VÀNG" cho 1080p
+        /* bufferForPlaybackAfterRebufferMs = */ 2500
+    )
+    .setPrioritizeTimeOverSizeThresholds(true)
+    .build()
 
         exoPlayer = ExoPlayer.Builder(context)
             .setMediaSourceFactory(hlsMediaSourceFactory)
